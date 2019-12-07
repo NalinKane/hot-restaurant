@@ -1,0 +1,32 @@
+*{
+    margin:0 auto;
+    display: block;
+}
+
+.container-desktop{
+    margin: 0 auto;
+    background: rgb(194, 194, 194);
+    width: 50%;
+    height: 30%;
+    
+}
+
+h1{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(167, 0, 0);
+    padding: 1em;
+}
+
+h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.button-view{
+    
+}
+

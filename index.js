@@ -7,7 +7,8 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var clientNames = [{ name: "", email: "" }];
+var waitingList = [];
+var tables = [];
 
 //GET
 
@@ -15,8 +16,12 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "/appfront/restapp.html"));
 });
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "/appfront/add.html"));
+app.get("/waitinglist", function(req, res) {
+  res.sendFile(path.join(__dirname, "/appfront/waitinglist.html"));
+});
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "/appfront/tables.html"));
 });
 
 //POST
@@ -27,9 +32,13 @@ app.post("/reserve", function(req, res) {
 
   console.log(newClient);
 
-  clientNames.push(newClient);
-
   res.json(newClient);
+
+  if (tables.length <= 5) {
+    tables.push(newClient);
+  } else {
+    waitingList.push(newClient);
+  }
 });
 
 app.listen(PORT, function() {

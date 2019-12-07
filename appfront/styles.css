@@ -16,6 +16,7 @@ h1{
     font-family: 'Bebas Neue', cursive;
     color: rgb(167, 0, 0);
     padding: 1em;
+    font-size: 40px;
 }
 
 h2{
@@ -25,8 +26,36 @@ h2{
     text-align: center;
     margin: 1em 0;
 }
+.book-table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
 
 .button-view{
-    
+    /* width: 6em; */
+    background: rgb(42, 42, 129);
+    color: darkgray;
+    text-align: center;
+    padding: 0.5em;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+   
+
+}
+
+.button-reservation{
+    background: rgb(167, 0, 0);
+    color: darkgray;
+    text-align: center;
+    padding: 0.5em;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+
 }
 

@@ -16,11 +16,27 @@
     <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
     <div class="book-table  book-table-desktop">
         <button class = "button-view" type ="button"><i class="fas fa-eye"></i>View tables</button>
-        <button class = "button-reservation" type ="button"><i class="fas fa-eye"></i>View tables</button>
+        <button class = "button-reservation" type ="button"><i class="fas fa-eye"></i>Make Reservation</button>
     </div>
 
 
     </div>
-    
+    <script>
+        fetch("/api/clientNames/" + searchedCharacter)
+            .then( res => res.json() )
+            .then(function(data) {
+            console.log(data);
+        if (data) {
+          document.querySelector("#stats").style.visibility = "visible";
+          document.querySelector("#name").textContent = data.name
+          document.querySelector("#role").textContent = data.role
+          document.querySelector("#age").textContent = data.age
+          document.querySelector("#force-points").textContent = data.forcePoints
+        } else {
+          document.querySelector("#name").textContent = "The force is not strong with this one. Your character was not found."
+          document.querySelector("#stats").style.visibility = "hidden";
+        }
+      });
+    </script>
 </body>
 </html>

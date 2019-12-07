@@ -7,7 +7,7 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var clientNames = [{ clientName: "", clientEmail: "" }];
+var clientNames = [{ name: "", email: "" }];
 
 //GET
 
@@ -20,12 +20,12 @@ app.get("/add", function(req, res) {
 });
 
 //POST
-app.post("", function(req, res) {
+app.post("/reserve", function(req, res) {
   var newClient = req.body;
 
-  newClient.routeName = newClient.name.replace(/\s+/g, "").toLowerCase();
+  //   newClient = newClient.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newCharacter);
+  console.log(newClient);
 
   clientNames.push(newClient);
 
